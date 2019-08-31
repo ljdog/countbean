@@ -1,0 +1,20 @@
+;收入(Income)”、“支出(Expenses)”、“负债(Liabilities)”、“资产(Assets)”2。
+1990-01-01 open Assets:Cash
+1990-01-01 open Expenses:Traffic:Didi
+1990-01-01 open Equity:OpenBalance
+
+option "title" "我的账本"
+option "operating_currency" "CNY"
+
+include "accounts.bean"
+
+; 每个月的账本
+include "2018-07.bean"
+
+2018-07-26 * "小桔科技" "滴滴打车"
+    Assets:Cash                 -15.00 CNY
+    Expenses:Traffic:Didi       15.00 CNY
+
+2018-07-25 * "初始化"
+    Equity:OpenBalance            
+    Assets:Cash                    100.00 CNY
